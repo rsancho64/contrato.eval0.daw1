@@ -14,30 +14,32 @@ class monton():
         """doc..."""
         pass
 
-    def __str__(self):
+    def __str__(self)-> str:
         """doc..."""
-        pass
-
+        return ""
+    
     def amontona(self, algo):
         """doc..."""
         pass
 
     def contiene(self, algo) -> bool:
         """doc..."""
-        pass
+        return True # pass
 
     def copiar(self, algo) -> object:
         """doc..."""
-        pass
+        return "Foo" # pass
 
     def tomar(self, algo) -> object:
         """doc..."""
-        pass
-
+        return "Foo" # pass
 
 if __name__ == "__main__":
     
     m0 = monton()        # m0 es un nuevo monton vacio
+    print(m0)
+
+    exit(0) # ==========================================
 
     m1 = monton("algo")  # m0 es un nuevo monton con "algo"
     m1.amontona("algo mas")
