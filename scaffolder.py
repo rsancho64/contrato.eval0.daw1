@@ -16,7 +16,7 @@ class monton():
 
     def __str__(self)-> str:
         """doc..."""
-        return ""
+        return "<<montonsito>>"
     
     def amontona(self, algo):
         """doc..."""
@@ -39,11 +39,11 @@ if __name__ == "__main__":
     m0 = monton()        # m0 es un nuevo monton vacio
     print(m0)
 
-    exit(0) # ==========================================
-
     m1 = monton("algo")  # m0 es un nuevo monton con "algo"
     m1.amontona("algo mas")
     # assert: en m1 hay "algo" y "algo mas" y NADA MAS.
+
+    exit(0) # ==ir bajando...===========================
 
     m1.amontona("perla")
     # assert: en m1 hay "algo" y "algo mas" y "perla" y NADA MAS.
