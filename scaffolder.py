@@ -4,11 +4,7 @@
 
 class monton():
  
-    __stuff = {} # bronce
-    # __stuff = () # bronce
-    # __stuff = [] # plata
-    # __stuff = "" # PARA MASOCAS
-    # __stuff = ... import maravilla # GLORIA
+    __stuff = "" # PARA MASOCAS
     
     def __init__(self, *args: ...):
         """doc..."""
