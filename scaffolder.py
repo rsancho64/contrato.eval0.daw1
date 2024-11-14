@@ -3,13 +3,13 @@
 # from marvelous import rainbow
 
 class monton():
- 
+
+    # __name__
     __stuff = "" # PARA MASOCAS
     
     def __init__(self, *args: ...):
         """doc..."""
         self.__stuff = ",".join(args)
-        pass
 
     def __str__(self)-> str:
         """doc..."""
@@ -47,7 +47,16 @@ class monton():
 
     def copiar(self, algo) -> object:
         """doc..."""
-        return "Foo" # pass
+        palabra = str(algo)
+        num_perlas = 0
+        if palabra in self.__stuff:
+            num_perlas = self.__stuff.count(palabra)
+            print(num_perlas)
+            return palabra
+        else:
+            print("no pearls")
+            return None
+
 
     def tomar(self, algo) -> object:
         """doc..."""
@@ -92,12 +101,15 @@ if __name__ == "__main__":
     predicado = m0.contiene("perla") # predicado == True
     print(predicado)
 
-    tesoro = m0.tomar("perla") # tesoro == "perla" ; en m0 DESAPARECE la "perla"
-    print(m0)  
-    
     copia = m0.copiar("perla") # copia == "perla"
     print(copia)
 
+    tesoro = m0.tomar("perla") # tesoro == "perla" ; en m0 DESAPARECE la "perla"
+    print(m0)  
+  
+
     exit(0) # ==ir bajando...===========================
 
+    
+    
     
