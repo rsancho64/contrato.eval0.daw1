@@ -2,10 +2,12 @@
 
 # from marvelous import rainbow
 
+from canonic import canonic
+
 class monton():
 
     # __name__
-    __stuff = "" # PARA MASOCAS
+    __stuff = [] # listas con cadenas
     
     def __init__(self, *args: ...):
         """doc..."""
@@ -27,7 +29,7 @@ class monton():
             else:
                 self.__stuff = algo.__stuff
         else:
-            palabra = str(algo)
+            palabra = canonic(str(algo))
             if self.__stuff:
                 self.__stuff += "," + palabra
                 # print(palabra)                            
@@ -73,6 +75,8 @@ class monton():
             return None
 
 if __name__ == "__main__":
+
+    exit(0) # ==ir bajando...===========================
     
     m0 = monton()        # m0 es un nuevo monton vacio
     print(m0)
@@ -107,8 +111,6 @@ if __name__ == "__main__":
     tesoro = m0.tomar("perla") # tesoro == "perla" ; en m0 DESAPARECE la "perla"
     print(m0)  
   
-
-    exit(0) # ==ir bajando...===========================
 
     
     
