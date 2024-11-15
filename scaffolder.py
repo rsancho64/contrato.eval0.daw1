@@ -2,54 +2,88 @@
 
 # from marvelous import rainbow
 
+import collections.abc
 class monton():
  
-    __stuff = {} # bronce
-    # __stuff = () # bronce
-    # __stuff = [] # plata
-    # __stuff = "" # PARA MASOCAS
-    # __stuff = ... import maravilla # GLORIA
+    stuff = [] 
     
-    def __init__(self, *args: ...):
-        """doc..."""
-        pass
-
+    def __init__(self, *args):
+        """init regular y de copia"""
+        self.stuff = []
+        for item in args:
+            self.amontona(item)
+ 
     def __str__(self)-> str:
         """doc..."""
-        return "<<montonsito>>"
+        answ = "<<"
+        for item in self.stuff:
+            answ += f"{str(item)}, "
+        answ += ">>"
+        return answ
     
     def amontona(self, algo):
-        """doc..."""
-        pass
+        """ si algo no es monton,, al monton
+        si algo es monton, todo lo que tiene, al monton
+        """
+        if isinstance(algo, monton):
+            self.stuff.extend(algo.stuff)
+        else:
+            self.stuff.append(algo)
 
-    def contiene(self, algo) -> bool:
-        """doc..."""
-        return True # pass
+    def __contains__(self, algo):
+        return algo in self.stuff
 
     def copiar(self, algo) -> object:
-        """doc..."""
-        return "Foo" # pass
+        if algo in self.stuff:
+            return algo
+        return None # todo raise ValueError
 
     def tomar(self, algo) -> object:
-        """doc..."""
-        return "Foo" # pass
+        if algo in self.stuff:
+            self.stuff.remove(algo)
+            return algo
+        return None  # todo raise ValueError
 
 if __name__ == "__main__":
     
     m0 = monton()        # m0 es un nuevo monton vacio
-    print(m0)
+    print("m0: ", m0)
 
-    m1 = monton("algo")  # m0 es un nuevo monton con "algo"
-    m1.amontona("algo mas")
-    # assert: en m1 hay "algo" y "algo mas" y NADA MAS.
+    m2 = monton("mas","tomas")        # m0 es un nuevo monton vacio
+    print("m2: ", m2)
+
+    m3 = monton(11,"doce",13)        # m0 es un nuevo monton vacio
+    print("m3: ", m3)
+
+    m4 = monton(11,"doce",13,m2)        # m0 es un nuevo monton vacio
+    print("m4: ", m4)
+
+    mOirig = monton("mas","tomas")        # m0 es un nuevo monton vacio
+    print("mOrig: ", mOirig)
+
+    mCopia = monton(mOirig)
+    print("mCopia: ", mCopia)
+
+    myset = set()
+    myset.add(22)
+    myset.add(33)
+    print(33 in myset)
+    
+    myMonton = monton()
+    myMonton.amontona(22)
+    myMonton.amontona(33)
+    print(33 in myMonton)
 
     exit(0) # ==ir bajando...===========================
 
     m1.amontona("perla")
     # assert: en m1 hay "algo" y "algo mas" y "perla" y NADA MAS.
+    print("m1: ", m1)
 
     m1.amontona("y mas mierdas")
     # assert: en m1 hay ...
+    print("m1: ", m1)
+
 
     # puedo amontonar -todo lo que haya- en un monton 
     # en otro moton.
@@ -61,4 +95,6 @@ if __name__ == "__main__":
     predicado = m0.contiene("perla") # predicado == True
     copia = m0.copiar("perla") # copia == "perla"
     tesoro = m0.tomar("perla") # tesoro == "perla" ; en m0 DESAPARECE la "perla"
+   
+
     
