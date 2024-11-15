@@ -3,35 +3,36 @@
 # from marvelous import rainbow
 
 class monton():
- 
-    __stuff = {} # bronce
-    # __stuff = () # bronce
-    # __stuff = [] # plata
-    # __stuff = "" # PARA MASOCAS
-    # __stuff = ... import maravilla # GLORIA
+    """
+    en k's: la info en forma canonica
+    en v's: la cantidad
+    """
+    __stuff = {} 
     
-    def __init__(self, *args: ...):
-        """doc..."""
-        pass
+    def __init__(self, *args):
+         pass
 
     def __str__(self)-> str:
-        """doc..."""
         return "<<montonsito>>"
     
-    def amontona(self, algo):
-        """doc..."""
+    def add(self, algo):
+        """
+            ¿ __add__ ?
+            si esta, el contador aumenta
+            si no esta, se incorpora
+        """
         pass
 
-    def contiene(self, algo) -> bool:
+    def __contains__(self, algo):
         """doc..."""
         return True # pass
 
-    def copiar(self, algo) -> object:
-        """doc..."""
+    def __popPgetP__ (self, algo) -> object:
+        """consulta y obtiene copia SIN MODIFICAR EL CONTENEDOR"""
         return "Foo" # pass
 
     def tomar(self, algo) -> object:
-        """doc..."""
+        """consulta y obtiene copia REDUCIENDO EL CONTENEDOR"""
         return "Foo" # pass
 
 if __name__ == "__main__":
